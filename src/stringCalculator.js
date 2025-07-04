@@ -5,7 +5,7 @@ const StringCalculator = {
             return 0;
         }
     // Refactored for test: 
-    const numArray = numbers.split(',');
+    const numArray = numbers.split(/[\n,]/);
     const numberList = numArray.map(num => parseInt(num, 10));
     return numberList.reduce((sum, num) => sum + num, 0);
     }
