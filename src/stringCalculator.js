@@ -1,6 +1,13 @@
+let callCount = 0;
+beforeEach(() => {
+  StringCalculator.resetCalledCount();
+});
 const StringCalculator = {
+    // Initialize a property to count calls   
+    
     add(numbers) {
-  if (numbers === "") return 0;
+        callCount++;
+        if (numbers === "") return 0;
 
   //delimeters used before comma and newline
   let delimeter = /[\n,]/;
@@ -18,8 +25,15 @@ const StringCalculator = {
     }
     
     return numberList.reduce((sum, num) => sum + num, 0);
-    }
+    },
 
+    getCalledCount() {
+        return callCount;
+    },
+
+    resetCalledCount() {
+        callCount = 0;
+    }
 };
 
 module.exports = StringCalculator;
