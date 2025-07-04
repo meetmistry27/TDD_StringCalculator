@@ -30,4 +30,10 @@ describe('StringCalculator', () => {
     //for multiple negative numbers
     expect(() => StringCalculator.add('1,-2,-3')).toThrow('Negative numbers not allowed: -2, -3');
   });
+
+  it('should return how many times add() was called', () => {
+    StringCalculator.add('1,2');
+    StringCalculator.add('3,4'); 
+    expect(StringCalculator.add.getCalledCount).toBe(2);
+  }); 
 });
