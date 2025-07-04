@@ -36,4 +36,10 @@ describe('StringCalculator', () => {
     StringCalculator.add('3,4'); 
     expect(StringCalculator.getCalledCount()).toBe(2);
   }); 
+
+  it('should ignore Numbers bigger than 1000', () => {
+    expect(StringCalculator.add('2,1001')).toBe(2);
+    expect(StringCalculator.add('1000,2')).toBe(1002);
+    expect(StringCalculator.add('1000,1001')).toBe(1000);
+  });
 });
