@@ -4,6 +4,10 @@ const StringCalculator = {
         if (numbers === "") {
             return 0;
         }
+
+        // Refactored for test: return numbeer itself when one input is passed
+        const singleNumber = Number(numbers);
+        return singleNumber;
     }
 }
 
