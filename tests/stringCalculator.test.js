@@ -20,5 +20,8 @@ describe('StringCalculator', () => {
   it('should handle newline between numbers as a valid delimeter', () => {    
     expect(StringCalculator.add('1\n2,3')).toBe(6);
   });
-  
+
+  it('should handle custom delimiters specified in the format "//[delimiter]\n[numbers]"', () => {
+    expect(StringCalculator.add('//;\n1;2;3')).toBe(6);
+  });
 });
