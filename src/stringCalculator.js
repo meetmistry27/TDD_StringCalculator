@@ -4,17 +4,10 @@ const StringCalculator = {
         if (numbers === "") {
             return 0;
         }
-    // Refactored for test: return number itself when one input is passed
-    const numArray = numbers.split(",");
-    if (numArray.length === 1) {
-        return Number(numArray[0]);
-        }
-    // Refactored for test: return sum of two numbers when two inputs are passed    
-    if (numArray.length === 2) {
-        const num1 = Number(numArray[0]);
-        const num2 = Number(numArray[1]);
-        return num1 + num2;
-    }
+    // Refactored for test: 
+    const numArray = numbers.split(',');
+    const numberList = numArray.map(num => parseInt(num, 10));
+    return numberList.reduce((sum, num) => sum + num, 0);
     }
 }
 
