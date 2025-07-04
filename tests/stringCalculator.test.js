@@ -16,4 +16,9 @@ describe('StringCalculator', () => {
   it('should return the sum of multiple numbers', () => {
     expect(StringCalculator.add('1,2,3')).toBe(6);
   });
+
+  it('should handle newline between numbers as a valid delimeter', () => {    
+    expect(StringCalculator.add('1\n2,3')).toBe(6);
+  });
+  
 });
