@@ -8,5 +8,8 @@ describe('StringCalculator', () => {
   it('should return the sum of a single number', () => {
     expect(StringCalculator.add('5')).toBe(5);
   });
-
+  
+  it('should return the sum of two numbers', () => {
+    expect(StringCalculator.add('1,2')).toBe(3);
+  });
 });
