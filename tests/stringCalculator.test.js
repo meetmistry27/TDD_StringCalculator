@@ -54,4 +54,7 @@ describe('StringCalculator', () => {
   expect(StringCalculator.add("//[*][%]\n1*2%3")).toBe(6);
   });
 
+  it('should support multiple multi-character delimeters' ,
+    () => {expect(StringCalculator.add("//[**][%%]\n1**2%%3")).toBe(6);});
+    
 });
