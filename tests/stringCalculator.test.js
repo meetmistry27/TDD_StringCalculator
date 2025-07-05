@@ -42,4 +42,10 @@ describe('StringCalculator', () => {
     expect(StringCalculator.add('1000,2')).toBe(1002);
     expect(StringCalculator.add('1000,1001')).toBe(1000);
   });
+
+  it('should handle delimiters of any length', () => {
+    expect(StringCalculator.add('//[***]\n1***2***3')).toBe(6);
+    expect(StringCalculator.add('//[--]\n1--2--3')).toBe(6);
+    expect(StringCalculator.add('//[%%%]\n1%%%2%%%3')).toBe(6);
+  });
 });
