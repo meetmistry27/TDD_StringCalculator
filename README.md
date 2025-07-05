@@ -57,9 +57,10 @@ Each test below was written first, before any implementation, following the TDD 
 | 5   | Supports newline (`\n`) as a valid delimiter with commas           | `"1\n2,3"`                            | `6`                                                |
 | 6   | Supports custom single-character delimiter                         | `"//;\n1;2;3"`                        | `6`                                                |
 | 7   | Throws error when a negative number is passed                      | `"1,-2,3"`                            | Throws Error: `Negative numbers not allowed: -2`       |
-| 8   | Throws error listing all negative numbers                          | `"1,-2,-3"`                           | Throws Error: `Negative numbers not allowed: -2, -3`   |
+| 7  | Throws error listing all negative numbers                          | `"1,-2,-3"`                           | Throws Error: `Negative numbers not allowed: -2, -3`   |
+| 8 | Tracks how many times `add()` was called                           | Two calls: `"1,2"` and `"3,4"`      | `getCalledCount()` returns `2`                    |
 | 9   | Ignores numbers greater than 1000                                  | `"2,1001"` / `"1000,2"`              | `2` / `1002`                                       |
 | 10  | Supports delimiters of any length using `//[delimiter]` format     | `"//[***]\n1***2***3"`               | `6`                                                |
 | 11  | Supports multiple single-character delimiters                      | `"//[*][%]\n1*2%3"`                  | `6`                                                |
 | 12  | Supports multiple multi-character delimiters                       | `"//[**][%%]\n1**2%%3"`              | `6`                                                |
-| 13  | Tracks how many times `add()` was called                           | Two calls: `"1,2"` and `"3,4"`      | `getCalledCount()` returns `2`                    |
+
