@@ -49,4 +49,9 @@ describe('StringCalculator', () => {
     expect(StringCalculator.add('//[%%%]\n1%%%2%%%3')).toBe(6);
     expect(StringCalculator.add('//[.*]\n1.*2.*3')).toBe(6);
   });
+
+  it('should support multiple single-character delimiters like //[*][%]\\n', () => {
+  expect(StringCalculator.add("//[*][%]\n1*2%3")).toBe(6);
+  });
+
 });
