@@ -2,6 +2,21 @@ let callCount = 0;
 beforeEach(() => {
   StringCalculator.resetCalledCount();
 });
+
+//Fully Compliant String Calculator implementation
+// This implementation supports:  
+// 1. Empty string returns 0  
+// 2. Single number returns the number itself
+// 3. Two numbers separated by a comma return their sum 
+// 4. Multiple numbers separated by commas or newlines return their sum
+// 5. Custom delimiters specified in the format "//[delimiter]\n[numbers]"
+// 6. Negative numbers throw an error with a message listing the negative numbers
+// 7. Ignores numbers greater than 1000
+// 8. Supports delimiters of any length, including multiple single-character and multi-character delimiters
+// 9. Counts how many times the add() method is called
+// 10. Resets the call count with resetCalledCount()
+// 11. Handles multiple delimiters in the format "//[delimiter1][delimiter2]\
+// 12. Handles delimiters of any length, including multiple single-character and multi-character delimiters
 const StringCalculator = {
     // Initialize a property to count calls   
     add(numbers) {
