@@ -17,7 +17,7 @@ const StringCalculator = {
     numbers = parts.slice(1).join(""); // Remaining part is the numbers
   }
     const numArray = numbers.split(delimeter);
-    const numberList = numArray.map(num => parseInt(num, 10));
+    const numberList = numArray.map(num => parseInt(num, 10)).filter(num => num <= 1000);
 
     const negatives = numberList.filter(num => num < 0);
     if (negatives.length > 0) { 
